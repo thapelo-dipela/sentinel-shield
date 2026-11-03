@@ -1,0 +1,11 @@
+[
+  {
+    "rule_id": "XSS001",
+    "path": "src/reviewed_component.tsx",
+    "fingerprint": "REPLACE_WITH_20_HEX_FINGERPRINT_FROM_FINDINGS_JSON",
+    "reason": "Fixed HTML is contextually encoded and reviewed; attach security review evidence",
+    "owner": "appsec-team",
+    "ticket": "SEC-123",
+    "expires": "REPLACE_WITH_DATE_WITHIN_90_DAYS"
+  }
+]

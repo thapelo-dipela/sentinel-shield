@@ -1,0 +1,3 @@
+-- Synthetic non-executable fixture. Never run these SQL statements.
+ALTER TABLE demo.private_records DISABLE ROW LEVEL SECURITY;
+create view public.records as select id from public.private_records;

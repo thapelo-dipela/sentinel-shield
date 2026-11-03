@@ -1,0 +1,46 @@
+rules:
+  - id: sentinel-python-insecure-subprocess-shell
+    languages: [python]
+    severity: ERROR
+    message: "Shell execution requires tracing of untrusted arguments. Prefer shell=False and argv arrays."
+    patterns:
+      - pattern: subprocess.run(..., shell=True, ...)
+    metadata:
+      category: security
+      cwe: "CWE-78"
+  - id: sentinel-python-insecure-ssl-requests
+    languages: [python]
+    severity: ERROR
+    message: "TLS verification disabled. Remove verify=False for production requests."
+    pattern-either:
+      - pattern: requests.get(..., verify=False, ...)
+      - pattern: requests.post(..., verify=False, ...)
+    metadata:
+      category: security
+      cwe: "CWE-295"
+  - id: sentinel-python-unsafe-yaml-load
+    languages: [python]
+    severity: WARNING
+    message: "yaml.load can instantiate unsafe objects. Use yaml.safe_load for untrusted data."
+    pattern: yaml.load(...)
+    metadata:
+      category: security
+      cwe: "CWE-502"
+  - id: sentinel-js-dynamic-code
+    languages: [javascript, typescript]
+    severity: ERROR
+    message: "Dynamic code execution needs review for attacker controlled values."
+    pattern-either:
+      - pattern: eval(...)
+      - pattern: new Function(...)
+    metadata:
+      category: security
+      cwe: "CWE-94"
+  - id: sentinel-javascript-disabled-tls-verification
+    languages: [javascript, typescript]
+    severity: ERROR
+    message: "TLS certificate validation must not be disabled."
+    pattern: "{ rejectUnauthorized: false }"
+    metadata:
+      category: security
+      cwe: "CWE-295"

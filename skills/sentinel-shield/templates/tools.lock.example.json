@@ -1,0 +1,5 @@
+{
+  "semgrep": {"path": "/trusted/bin/semgrep", "sha256": "REPLACE_WITH_ACTUAL_SHA256"},
+  "trivy": {"path": "/trusted/bin/trivy", "sha256": "REPLACE_WITH_ACTUAL_SHA256"},
+  "gitleaks": {"path": "/trusted/bin/gitleaks", "sha256": "REPLACE_WITH_ACTUAL_SHA256"}
+}

@@ -1,0 +1,2 @@
+# Trusted placeholder configuration. Trivy is only invoked with offline flags.
+format: json
