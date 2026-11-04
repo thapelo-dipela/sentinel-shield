@@ -2,9 +2,11 @@
 
 Open-source, offline-first security auditing skill for owned and explicitly authorized repositories. Licensed under the [MIT License](LICENSE).
 
-**Current version: 2.3.0. Version 2.4 is upcoming and is not included yet.**
+**Current version: 2.5.0 — CISA integrity and supply-chain hardening.**
 
-Sentinel Shield combines a Python scanner, regression tests, review guidance, and integration templates. It detects security leads; it does not guarantee that an application is secure. Live Semgrep, Gitleaks, and Trivy execution has not been validated for this v2.3 build.
+Sentinel Shield combines a Python scanner, regression tests, review guidance, and integration templates. It detects security leads; it does not guarantee that an application is secure. Live external scanner compatibility and end-to-end feed downloads were not validated in this release review.
+
+Version 2.5 adds raw-feed cache integrity checks, KEV catalog size and drop checks, protected cache paths, commit-pinned mirror downloads, and source-bound Gitleaks fingerprints. It also includes optional dependency monitoring and release attestation templates. See [v2.5 verification and limitations](docs/RELEASE-v2.5.0.md).
 
 ## Get started
 
@@ -21,7 +23,7 @@ The integrity command checks file consistency, not publisher identity. For authe
 
 ## Repository layout
 
-- `skills/sentinel-shield/`: original v2.3.0 package, including its unchanged SHA256 inventory.
+- `skills/sentinel-shield/`: original v2.5.0 package, including its unchanged SHA256 inventory.
 - `LICENSE`: MIT terms covering this project, including the skill package.
 - `CONTRIBUTING.md`: development and version-update instructions.
 - `SECURITY.md`: vulnerability reporting guidance.
@@ -36,6 +38,8 @@ Python 3.11 or newer is recommended. The local regression suite uses the standar
 python -B -m unittest discover -s skills/sentinel-shield/tests -v
 ```
 
-## Upcoming v2.4
+## Releases
 
-The repository is ready to receive v2.4. Replace the package in `skills/sentinel-shield/` with the complete new version, verify its inventory, run the tests, update the version above, and create a new release. Do not label the current v2.3 code as v2.4.
+Download the supplied archive and verification hashes from the [v2.5.0 release](https://github.com/thapelo-dipela/sentinel-shield/releases/tag/v2.5.0). The archive is unsigned. The repository's MIT license covers the package; a copy is also provided with the release. The original v2.3.0 tag remains available.
+
+Monitoring and attestation workflows under `skills/sentinel-shield/templates/` are examples, not enabled services. Adapt their paths to this repository layout, configure independently approved hashes, and protect the publisher environment before enabling them.

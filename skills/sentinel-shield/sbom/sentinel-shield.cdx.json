@@ -1,0 +1,482 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "bom-ref": "file:.gitignore",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c00551407035461a0322d95f3001fb9d2590695d8766f378ac9bfcae49e460b8"
+        }
+      ],
+      "name": ".gitignore",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:CHANGELOG.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bf2dbad8110991afe120e919afa4906005ff414c04863c5890a9f1cafe9ee603"
+        }
+      ],
+      "name": "CHANGELOG.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:README.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "106bedf8a391c0e7096954e856c8c9b72e4181eab167e932e68ef5f4cca93449"
+        }
+      ],
+      "name": "README.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:SKILL.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "237c3d5bde524f12a92f9f53920b460706f08ad3ecd8694b62e515b4a966bb25"
+        }
+      ],
+      "name": "SKILL.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:benchmarks/INDEPENDENT_VALIDATION_PLAN.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "18953b44ee6b609e92613b433514beb78b49a7c3f0929daf2a343190a91a0cc7"
+        }
+      ],
+      "name": "benchmarks/INDEPENDENT_VALIDATION_PLAN.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:benchmarks/synthetic_corpus.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4e58344fe0dd3b2c91643200237dd0e0ba01ebbba52764e829ef477fc56d19fa"
+        }
+      ],
+      "name": "benchmarks/synthetic_corpus.json",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:benchmarks/v2.4-synthetic-results.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "25bbd0c98ad1c51897d76281f6d5ba1fac8716822724338db9a743f74cfa409e"
+        }
+      ],
+      "name": "benchmarks/v2.4-synthetic-results.json",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:benchmarks/v2.5-synthetic-results.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a4a9b0b979988e8a878b44b184493488cee22f47737e0390b563486160f32e91"
+        }
+      ],
+      "name": "benchmarks/v2.5-synthetic-results.json",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/APP_AND_IDENTITY.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a99cdab9ad303104c15a9956df406449a065844e2b0d405ec3316f8a2153cc84"
+        }
+      ],
+      "name": "docs/APP_AND_IDENTITY.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/CI_SUPPLY_CHAIN.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3f586c3251852c66ec8a7c4b7d3ff74881efb4258ff0dafbdbb77eae4fca1032"
+        }
+      ],
+      "name": "docs/CI_SUPPLY_CHAIN.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/CONTROL_MATRIX.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5c5b58968a23f99241064514c6d2818dee251459ff8862a6f69597e81b6cfe6b"
+        }
+      ],
+      "name": "docs/CONTROL_MATRIX.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/ENTERPRISE_GAP_MAP.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5ab5cde0040b605ec2be9b3aa5a500c8014091ef7d6175b9449a317f9e04bbff"
+        }
+      ],
+      "name": "docs/ENTERPRISE_GAP_MAP.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/EVALUATION_AND_RELEASE.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "74706a43777b97e701d6a34827c25f9f0299342c09579b38deae5d62d1b855db"
+        }
+      ],
+      "name": "docs/EVALUATION_AND_RELEASE.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/HOSTILE_REPO_AND_AGENT_SECURITY.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4047dc5b2dcab323c4587ddfc3cd3bf9c11a7e389f8809341a4e1ada9ea5e592"
+        }
+      ],
+      "name": "docs/HOSTILE_REPO_AND_AGENT_SECURITY.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/ISOLATION_AND_TOOLS.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1c504ed14082567be3154756c244512352242348418f8258070829c22c5be2c5"
+        }
+      ],
+      "name": "docs/ISOLATION_AND_TOOLS.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/RELEASE_SECURITY_NOTES.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "292c9d085d9c4e6d5f8a231234e9f0b8a1701d4f2e2a3f6bc0e72d3b75e4486e"
+        }
+      ],
+      "name": "docs/RELEASE_SECURITY_NOTES.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/RELEASE_SIGNING.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d0ee617a373d2fe0f04202aa45846eee4d1d33989ecb4ff154a346ef2d9e55ae"
+        }
+      ],
+      "name": "docs/RELEASE_SIGNING.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/SECURE_PATTERNS.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0bd9e560a777989344e8c29dabc007ee93a191b33afa8e23c867d186693c6f03"
+        }
+      ],
+      "name": "docs/SECURE_PATTERNS.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/STANDARDS_SOURCES.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8542b474fc2e36e4069645c6cb1a9c8314279362ef27629799d4781268222b98"
+        }
+      ],
+      "name": "docs/STANDARDS_SOURCES.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/SUPABASE_AND_NEXTJS.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "83aa2f1af1e40f9fd57c37ff41fd0a97f7cf282254ef25079b7ce9ffc4271001"
+        }
+      ],
+      "name": "docs/SUPABASE_AND_NEXTJS.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/THREAT_INTELLIGENCE.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3e55e9f5a81a03952d85c1e9effd4e7cfc9304975818dcf8f6852f5829e47b5e"
+        }
+      ],
+      "name": "docs/THREAT_INTELLIGENCE.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:fixtures/hostile_instructions_sample.txt",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "53689687c23bb325fafe018086e25a8086dc08db27434755f67cc0e36b7f6c9a"
+        }
+      ],
+      "name": "fixtures/hostile_instructions_sample.txt",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:fixtures/insecure_sample.sql.txt",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "682ecfd5021c0a2cf6b97ad8fba30ca3ca233dd285eb38dbcdac5ce8877ec9e8"
+        }
+      ],
+      "name": "fixtures/insecure_sample.sql.txt",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:rules/gitleaks.toml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5be0159bb509b91ed1ad7f2d8fc7f50fd06ccf7da3a2db2ae4ba426794ba6ca5"
+        }
+      ],
+      "name": "rules/gitleaks.toml",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:rules/semgrep.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9caf948b5fc9b4dbb65b4d7a7b5089092f6b9ee3eaf4ca88991afd3ce0df50aa"
+        }
+      ],
+      "name": "rules/semgrep.yml",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:rules/trivy.yaml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c4d27e1ddd816f6f5cc35329bdab593a393b86375ab159f4e4b9f7c5f6391fb8"
+        }
+      ],
+      "name": "rules/trivy.yaml",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/benchmark.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1f33564f797f21521dfe73a50874f2e74d83ad0a19953d14d8245944fda04a41"
+        }
+      ],
+      "name": "scanner/benchmark.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/compat_smoke.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6713d6d4a04e661503fd4ae0ddcc0a29101b2464da3cce99b76284f54cee715f"
+        }
+      ],
+      "name": "scanner/compat_smoke.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/generate_sbom.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cfa7dfd7b53d11ec9c4cb9d342026dde178ca72413f711607e55de068b556531"
+        }
+      ],
+      "name": "scanner/generate_sbom.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/sentinel.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fd5e0b14ade194930b21b29e892252730af3cbbb5109de4a7ab3d0839bb7ef21"
+        }
+      ],
+      "name": "scanner/sentinel.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/threat_intel.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1595ab24ee2f3f0c8a54013a005f5331fdd7bba78c7844a16709d6dd10f027a8"
+        }
+      ],
+      "name": "scanner/threat_intel.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/verify_integrity.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "aa7790f95eb24cfb25688e9773798d5bb76639501160eae06f06e28502a04c0f"
+        }
+      ],
+      "name": "scanner/verify_integrity.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:templates/SECURITY_REVIEW_TEMPLATE.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4f4b6e6cd7839b8cbaa5682f6723d41e832d1f70ed4abae94539b3dcd589c10d"
+        }
+      ],
+      "name": "templates/SECURITY_REVIEW_TEMPLATE.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:templates/release-attestation-workflow.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "0864448937fc2c2d7bd4f6643889bc5ea6f483da4203990621a60745c14605bb"
+        }
+      ],
+      "name": "templates/release-attestation-workflow.yml",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:templates/security-workflow.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c130ff23e51fc9505a4a0ec738963169659c9b31ad12a31a50bc3c4d6f066543"
+        }
+      ],
+      "name": "templates/security-workflow.yml",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:templates/suppressions.example.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9e79d687b7aed7c056937b072187e6a331cf58364e1784261471cdff0287af37"
+        }
+      ],
+      "name": "templates/suppressions.example.json",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:templates/threat-intel-workflow.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "43687a223f8823b6d474a84d3c49bdc569383879973aa6ebdc9640296ee20c55"
+        }
+      ],
+      "name": "templates/threat-intel-workflow.yml",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:templates/tools.lock.example.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1bec4abe51edb6723e5909d2103eb43d9d2e4ac1a3cf36611b25642681e5d284"
+        }
+      ],
+      "name": "templates/tools.lock.example.json",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:tests/test_release_templates.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7acf61b98e489b90444e8b7975585667151dee8bb629d523ce54ab25c09a82b0"
+        }
+      ],
+      "name": "tests/test_release_templates.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:tests/test_sentinel.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "80c624f9f09359878a4a0cdc0b17debfe38760370544f77907b550d766a693db"
+        }
+      ],
+      "name": "tests/test_sentinel.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:tests/test_threat_intel.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c1eac3af00f7085de697de4013c46696efee8601309c8835f52422a8a3e27e7a"
+        }
+      ],
+      "name": "tests/test_threat_intel.py",
+      "type": "file"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependsOn": [],
+      "ref": "pkg:generic/sentinel-shield@2.5.0"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "bom-ref": "pkg:generic/sentinel-shield@2.5.0",
+      "name": "sentinel-shield",
+      "type": "application",
+      "version": "2.5.0"
+    },
+    "properties": [
+      {
+        "name": "sentinel:scope",
+        "value": "release source files only; external scanner binaries and environment not included"
+      },
+      {
+        "name": "sentinel:distribution-signature",
+        "value": "unsigned; publisher identity not attested"
+      }
+    ]
+  },
+  "specVersion": "1.6",
+  "version": 1
+}

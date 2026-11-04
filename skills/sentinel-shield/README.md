@@ -1,6 +1,35 @@
-# Sentinel Shield v2.3.0
+# Sentinel Shield v2.5.0
 
 **Offline-first security auditing skill for owned and explicitly authorized repositories.** All package files are included. This scanner is a security **lead detector** and guided review process, not an antivirus, WAF, runtime monitor, comprehensive secret scanner, taint engine, or guarantee of a secure deployment.
+
+## New in v2.5: cache and Gitleaks reliability
+
+- **Fail-closed threat intelligence cache**: raw HTTPS feed retained in a single atomic cache file, SHA256 recomputed and parsed items compared on every review; KEV minimum 1,000 validated entries and a 15% maximum unexpected drop versus a verified prior snapshot. A forged empty cache now causes incomplete coverage rather than exit 0.
+- **Protected cache location**: refuses symlinked path components and directories under the audited repository; on POSIX enforces owner-controlled mode `0700` directory and `0600` files. Windows users must also check ACLs. This is cache integrity and local ownership protection, **not a cryptographic publisher signature**.
+- **Pinned mirror snapshots**: if canonical cisa.gov KEV fails, obtains the CISA-maintained GitHub mirror's commit SHA first, then downloads via that immutable commit URL. Never fetches the mutable `develop` branch for data directly.
+- **Gitleaks secret identity**: hashes bounded local source evidence, including distinct same-line match spans when offsets exist; never relies on redacted scanner text. Missing source evidence makes coverage partial.
+- **Threat workflow**: the scheduled template now runs a pinned, hash-verified Trivy 0.76.1 build to produce project dependency CVEs before CISA KEV comparison; it requires a separately verified download digest and does not run automatically until installed.
+- **Release provenance template**: includes pinned GitHub Actions attestation workflow for keyless provenance and source-file CycloneDX SBOM attestation. **This ZIP is not signed or attested** and cannot establish publisher authenticity by itself.
+
+## Published threat intelligence (introduced in v2.4)
+
+- **CISA KEV**: read the latest known-exploited CVE catalog and compare exact IDs against a locally supplied Trivy or CycloneDX vulnerability report. No unverified package/version claims.
+- **CISA advisories**: display safe, bounded news/advisory titles, publication dates and CVE references. This is not a real-time attack sensor.
+- **OWASP VWAD**: read OWASP's vulnerable-application directory and suggest isolated manual test fixtures by technology, without downloading or testing those applications.
+- Explicit opt-in HTTPS refresh, allowlisted endpoints, safe offline cached review, freshness warnings and optional scheduled CI workflow.
+
+```bash
+python3 -B -I scanner/threat_intel.py refresh --allow-network --cache-dir /trusted/feed-cache
+python3 -B -I scanner/threat_intel.py review --cache-dir /trusted/feed-cache --vuln-report /trusted/trivy.json --technology Python
+```
+
+See `docs/THREAT_INTELLIGENCE.md`. **The new downloader has not been live-tested end-to-end in this build environment; offline parser and integration tests pass.** Feed errors must never be treated as clean coverage. Standard hostile-repository audits remain entirely offline.
+
+## Other v2.4 improvements
+
+- Content-normalized finding fingerprints: changed vulnerable code invalidates its former suppression, while unchanged evidence moved to a new line keeps its identity. Identical repeated findings cannot be broadly suppressed.
+- Stable machine-independent Semgrep rule IDs, no installation-directory leakage.
+- Local synthetic benchmark and source-file CycloneDX inventory; **neither is proof of enterprise SAST accuracy or signed provenance**.
 
 ## Installation and integrity
 
@@ -19,7 +48,7 @@ python3 -B -I scanner/verify_integrity.py --expected-manifest-sha256 DIGEST_FROM
 
 The manifest **inside the ZIP alone does not prove publisher authenticity**. The ZIP SHA256 and manifest SHA256 should be distributed separately from the archive (e.g. a protected release record) and checked prior to executing any included scripts. Do not run `pip install`, `npm install`, builds or repository hooks during hostile audits. The `-B` option avoids generating cache files that would fail inventory verification.
 
-## What v2.3 changes
+## v2.3 inherited hardening
 
 - **Untrusted paths in machine reports:** `findings.json` retains exact `path` values for matching and SARIF navigation, alongside `display_path` and `path_id`. Its top-level `trust_notice` and `untrusted_fields` explicitly warn agents against following source-derived text. Markdown shows the safe display label, never raw paths. Suspicious, non-ASCII, or long paths become opaque IDs. **Machine consumers must use `display_path` for any AI-facing prompt or UI and treat `path` as untrusted structured data.**
 - **Narrow suppressions:** require `rule_id`, exact per-finding `fingerprint`, `path` or `path_id`, `reason`, `owner`, `ticket`, and ISO expiry no more than 90 days ahead. A second finding under the same path+rule is not waived. Expired suppressions remain visible but cannot suppress findings; CRITICAL issues cannot be suppressed. No repo-local suppression file is trusted.
@@ -34,7 +63,7 @@ The manifest **inside the ZIP alone does not prove publisher authenticity**. The
 
 ## Validation scope
 
-The included regression suite tests mocked third-party invocation and parsing plus local fixtures. **The v2.3 build environment has not executed live Semgrep, Gitleaks or Trivy binaries.** An independent v2.2 assessment reported success using Semgrep 1.183.0 and Gitleaks 8.30.1, but these are not equivalent to executing and certifying the v2.3 build or Trivy. Use `scanner/compat_smoke.py` on SHA256-pinned binaries in a separately enforced isolated sandbox. A successful smoke test is not comprehensive vulnerability coverage.
+The included regression suite tests mocked third-party invocation and parsing plus local fixtures. **The v2.5 build environment has not executed live Semgrep, Gitleaks or Trivy binaries.** Independent reviewer tests for earlier versions reported successful Semgrep 1.183.0 and Gitleaks 8.30.1 compatibility, but Trivy and the new threat-feed downloader have not been live tested end-to-end here. Use `scanner/compat_smoke.py` on SHA256-pinned binaries in a separately enforced isolated sandbox. A successful smoke test is not comprehensive vulnerability coverage.
 
 ## Profiles, trust boundary and exit codes
 
@@ -56,3 +85,9 @@ PYTHONDONTWRITEBYTECODE=1 python3 -B -m unittest discover -s tests -v
 ```
 
 Regression tests include canned Gitleaks/Trivy/Semgrep outputs, mock CLI invocation, SQL lexer cases, real SARIF paths and shadow-copy staging. Real Gitleaks, Trivy and Semgrep binaries are not bundled. Their runtime compatibility, offline databases, handling of untrusted ignore files, and exhaustive repository coverage must be separately validated with pinned versions in an isolated environment. Use the `docs` and `templates` for agent workflows, manual reviews and safeguards. Provenance, authentication, and dynamic staged checks remain manual tasks.
+
+## Production automation setup (optional)
+
+Copy `templates/threat-intel-workflow.yml` to a protected repository's `.github/workflows/` directory and set the independently approved `SENTINEL_MANIFEST_SHA256` and `SENTINEL_TRIVY_TARBALL_SHA256` GitHub variables. Review the exact tool URL/version, permissions and data-handling terms before enabling. The workflow compares *the project's actual Trivy CVEs* with CISA KEV. It does not detect attacks in progress or scan private deployment environments. See `docs/THREAT_INTELLIGENCE.md`.
+
+`templates/release-attestation-workflow.yml` can be adopted by an owner-controlled release repository with protected tags, SHA-pinned actions and appropriate GitHub attestation permissions. No attestation is included in this locally generated ZIP; an operator must publish and verify a real signed provenance record. See `docs/RELEASE_SIGNING.md`.

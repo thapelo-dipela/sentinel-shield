@@ -1,0 +1,107 @@
+# TEMPLATE. Requires a protected, independently configured digest for this skill
+# and a reviewed SHA256 for the pinned Trivy release archive.
+# Trigger on protected default branch only, never untrusted pull requests.
+name: Sentinel Shield KEV comparison with project dependencies
+on:
+  schedule:
+    - cron: '31 6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  intelligence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SENTINEL_ROOT: .agents/skills/sentinel-shield
+      TRIVY_VERSION: '0.76.1'
+    steps:
+      - name: Checkout protected default branch
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Verify skill using external protected SHA256 manifest digest
+        env:
+          SENTINEL_MANIFEST_SHA256: ${{ vars.SENTINEL_MANIFEST_SHA256 }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! "$SENTINEL_MANIFEST_SHA256" =~ ^[a-fA-F0-9]{64}$ ]]; then
+            echo 'Protected independent skill digest must be configured' >&2
+            exit 2
+          fi
+          python3 -B -I "$SENTINEL_ROOT/scanner/verify_integrity.py" \
+            --expected-manifest-sha256 "$SENTINEL_MANIFEST_SHA256"
+      - name: Install exactly pinned Trivy after independent archive verification
+        shell: bash
+        env:
+          TRIVY_TARBALL_SHA256: ${{ vars.SENTINEL_TRIVY_TARBALL_SHA256 }}
+        run: |
+          set -euo pipefail
+          [[ "$TRIVY_TARBALL_SHA256" =~ ^[a-fA-F0-9]{64}$ ]] || { echo 'Missing reviewed Trivy archive digest' >&2; exit 2; }
+          mkdir -p "$RUNNER_TEMP/sentinel-bin" "$RUNNER_TEMP/sentinel-intelligence"
+          curl --fail --silent --show-error --location --retry 2 --max-time 100 \
+            "https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz" \
+            --output "$RUNNER_TEMP/sentinel-bin/trivy.tar.gz"
+          echo "$TRIVY_TARBALL_SHA256  $RUNNER_TEMP/sentinel-bin/trivy.tar.gz" | sha256sum --check --status
+          tar -xzf "$RUNNER_TEMP/sentinel-bin/trivy.tar.gz" -C "$RUNNER_TEMP/sentinel-bin" trivy
+          chmod 700 "$RUNNER_TEMP/sentinel-bin/trivy"
+          "$RUNNER_TEMP/sentinel-bin/trivy" --version
+      - name: Generate CURRENT project vulnerability report with Trivy
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/sentinel-bin/trivy" fs \
+            --scanners vuln --format json --exit-code 0 --no-progress \
+            --cache-dir "$RUNNER_TEMP/sentinel-intelligence/trivy-cache" \
+            --output "$RUNNER_TEMP/sentinel-intelligence/trivy-vulnerabilities.json" .
+          python3 -B -I - "$RUNNER_TEMP/sentinel-intelligence/trivy-vulnerabilities.json" <<'PY'
+          import json,sys
+          from pathlib import Path
+          data=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))
+          if not isinstance(data,dict) or not isinstance(data.get('Results'),list):
+              raise SystemExit('Trivy returned invalid vulnerability report')
+          print('Trivy dependency-report schema validated')
+          PY
+      - name: Refresh public CISA and OWASP feeds
+        id: refresh
+        shell: bash
+        run: |
+          set +e
+          python3 -B -I "$SENTINEL_ROOT/scanner/threat_intel.py" refresh \
+            --repo-root "$GITHUB_WORKSPACE" --allow-network \
+            --cache-dir "$RUNNER_TEMP/sentinel-intelligence/cache" \
+            > "$RUNNER_TEMP/sentinel-intelligence/refresh-status.json"
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Match actual project CVEs against CISA KEV
+        id: review
+        shell: bash
+        run: |
+          set +e
+          python3 -B -I "$SENTINEL_ROOT/scanner/threat_intel.py" review \
+            --repo-root "$GITHUB_WORKSPACE" \
+            --cache-dir "$RUNNER_TEMP/sentinel-intelligence/cache" \
+            --vuln-report "$RUNNER_TEMP/sentinel-intelligence/trivy-vulnerabilities.json" \
+            --out "$RUNNER_TEMP/sentinel-intelligence" \
+            > "$RUNNER_TEMP/sentinel-intelligence/review-status.txt"
+          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Upload review report even when KEV alerts or feed failures occur
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: sentinel-project-kev-review
+          path: ${{ runner.temp }}/sentinel-intelligence/**
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Fail on known exploited CVEs or incomplete feed coverage
+        if: always()
+        env:
+          REFRESH: ${{ steps.refresh.outputs.exit_code }}
+          REVIEW: ${{ steps.review.outputs.exit_code }}
+        run: |
+          if [[ "$REFRESH" != 0 || "$REVIEW" != 0 ]]; then
+            echo "KEV review not clean: refresh=$REFRESH review=$REVIEW; review uploaded report" >&2
+            exit 1
+          fi

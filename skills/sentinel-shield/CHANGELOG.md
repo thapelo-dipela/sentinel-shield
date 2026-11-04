@@ -1,3 +1,22 @@
+# Sentinel Shield v2.5.0 (4 November 2026)
+
+- **Fail-closed KEV cache**: retained raw source bytes in the atomic snapshot; enforce rehash/reparse consistency on load, a minimum of 1,000 KEV records, sudden-drop detection (15%) and owner-controlled POSIX cache permissions. Reject symlinked cache paths and repo-local caches. A forged empty snapshot now returns incomplete rather than false clean. Legacy cache files require a new trusted refresh.
+- **Commit-pinned CISA mirror fallback**: query CISA's maintained GitHub repo for the current commit, fetch the immutable 40-character-SHA snapshot and record the commit; mutable branch content is no longer consumed directly. Mirror HEAD and raw feed are not independently signed.
+- **Gitleaks fingerprint correction**: use bounded local source evidence rather than redacted Gitleaks JSON; distinguishing same-file secrets, moved code and replacements, including match columns when available. Missing local files become partial coverage. Fingerprint scheme `v2.4` remains unchanged for existing baseline compatibility.
+- **CISA scheduled project comparison**: workflow requires a trusted-digest-pinned Trivy v0.76.1 installation, generates actual project CVE JSON and passes `--vuln-report` to offline KEV review; no new vulnerabilities inferred from KEV alone. Requires operator configuration and deployment.
+- **Release signing template**: SHA-pinned GitHub Actions workflow for keyless provenance and CycloneDX file SBOM attestations, not executed for this local ZIP. Includes documented verification and independently governed release tag requirements.
+- **Evaluation**: new cache poisoning, symlink, permission, UTF-16 XML, feed shrink, mirror pinning and Gitleaks fingerprint regression tests, plus independent real-app validation protocol (not yet executed).
+- **Not yet demonstrated**: real Trivy binary compatibility in this environment, live CISA fetch from this environment, real signed provenance for this ZIP, independent real-app precision/recall or comprehensive taint analysis.
+
+# Sentinel Shield v2.4.0 (4 November 2026)
+
+- Content-normalized finding fingerprints and machine-independent Semgrep IDs, with regression tests.
+- New opt-in `scanner/threat_intel.py`: bounded CISA KEV and CISA RSS updates, exact CVE comparison to supplied Trivy/CycloneDX reports, new-feed deltas, OWASP VWAD offline lab catalog filtering and incomplete/stale feed signaling.
+- New `docs/THREAT_INTELLIGENCE.md` and `templates/threat-intel-workflow.yml` for optional scheduled checks from a trusted verified package.
+- Local synthetic benchmark, source-file CycloneDX inventory and explicit integrity/provenance limitations.
+- **Not implemented**: signed releases/attestations, live Trivy validation, CVE version reachability, runtime attack monitoring, automatic lab execution, or independent real-world precision/recall metrics.
+- **Validation note**: feed refresh parser/transport behavior tested offline with mocks; network connectivity to official feeds not end-to-end executed in the release environment.
+
 # Changelog
 
 ## 2.3.0 | 2 November 2026

@@ -1,4 +1,4 @@
-# Standards and sources | last verified 2026-11-02
+# Standards and sources | last verified 2026-11-04
 
 The requirements below are **version pinned as reviewed**, not an assertion that they will remain latest. Refresh at least monthly and on official security release or protocol deprecation. Do not infer individual ASVS IDs from a previous major release.
 
@@ -34,3 +34,15 @@ Recheck MCP spec when SDK versions change, OAuth issuer/audience behavior change
 ## POPIA note
 
 Section 19 sets security safeguard obligations and risk control expectations; section 22 addresses security compromise notification to the Information Regulator and affected data subjects in defined circumstances. A source audit is not a legal determination. Escalate notifications, timelines, data-subject issues and regulator correspondence to authorized legal/privacy leadership.
+
+## Public vulnerability intelligence and benchmark directories (verified 2026-11-04)
+
+| Source | Purpose | Link |
+|---|---|---|
+| CISA Known Exploited Vulnerabilities | Confirmed in-the-wild exploitation catalog, not a complete vulnerability database | https://www.cisa.gov/known-exploited-vulnerabilities-catalog |
+| CISA KEV official data mirror | CISA-maintained machine-readable KEV JSON | https://github.com/cisagov/kev-data |
+| CISA cybersecurity advisories | Official published advisories and threat notices, not continuous runtime detection | https://www.cisa.gov/cybersecurity-advisories/all.xml |
+| OWASP Vulnerable Web Applications Directory | Curated intentionally vulnerable **learning and test** application directory, **not** currently exploited CVEs | https://vwad.owasp.org/ |
+| OWASP VWAD JSON project source | VWAD static site source, machine-readable collection | https://github.com/owasp-vwad/owasp-vwad.github.io |
+
+Feed ingestion is an optional network operation requiring `--allow-network`. An inability to obtain a feed is explicitly incomplete. Never interpret a VWAD listing as an active attack against a real application or automatically fetch and run training apps.

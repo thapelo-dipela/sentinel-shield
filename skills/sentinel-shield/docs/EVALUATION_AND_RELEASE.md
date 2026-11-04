@@ -11,7 +11,7 @@
 
 ## Baselines and suppressions
 
-Use a centrally managed prior JSON outside the scanned tree as `--baseline /trusted/prior-findings.json`; findings remain displayed but only new fingerprints gate. Fingerprints currently include rule + source path ID + line, so line movement can produce new findings. Suppressions are independent centrally controlled JSON records requiring a rule, exact fingerprint, path or path ID, reason, owner, issue/ticket and expiry no more than 90 days ahead. A waiver for one finding cannot hide another occurrence with the same rule and path. Expired suppressions are ignored and emitted as audit findings (not an immediate configuration error). **CRITICAL cannot be suppressed.** Suppression is not automatically granted by `--baseline` unless a finding matches the previous report exactly.
+Use a centrally managed prior JSON outside the scanned tree as `--baseline /trusted/prior-findings.json`; findings remain displayed but only new fingerprints gate. Fingerprints use rule + source path ID + whitespace-normalized matched-code digest where evidence is available, so unchanged code can move without invalidating a reviewed finding; changed code invalidates the old suppression. Identical duplicate matches remain non-suppressible as a group. Suppressions are independent centrally controlled JSON records requiring a rule, exact fingerprint, path or path ID, reason, owner, issue/ticket and expiry no more than 90 days ahead. A waiver for one finding cannot hide another occurrence with the same rule and path. Expired suppressions are ignored and emitted as audit findings (not an immediate configuration error). **CRITICAL cannot be suppressed.** Suppression is not automatically granted by `--baseline` unless a finding matches the previous report exactly.
 
 ## SARIF and privacy
 
@@ -23,12 +23,12 @@ Incident commander decides scope. Typical approved sequence: invalidate/revoke t
 
 ## Skill quality evaluation plan
 
-Run tests on **deliberately vulnerable, locally isolated learning fixtures** and synthetic Supabase migrations. Suggested sources for a human-controlled lab include OWASP Juice Shop and NodeGoat, with no external targets. Track per-release: detection precision/recall by risk class, false-positive count, skipped file ratio, runtime and memory limits, injection-resilience pass rate, sanitizer leak failures, and whether tools can execute despite hostile mode. Run regression checks for Unicode controls, malicious filenames, report re-ingestion, symlink traversal, file count limits, stale suppressions and dependency outputs. This repository includes synthetic fixtures and local tests, **not benchmarked recall or a validated app-wide penetration test**.
+Run tests on **deliberately vulnerable, locally isolated learning fixtures** and synthetic Supabase migrations. Suggested sources for a human-controlled lab include OWASP Juice Shop and NodeGoat, with no external targets. Track per-release: detection precision/recall by risk class, false-positive count, skipped file ratio, runtime and memory limits, injection-resilience pass rate, sanitizer leak failures, and whether tools can execute despite hostile mode. Run regression checks for Unicode controls, malicious filenames, report re-ingestion, symlink traversal, file count limits, stale suppressions and dependency outputs. This repository includes a **synthetic rule-signal benchmark** with documented limitations and local tests, **not independent real-world SAST recall or a validated app-wide penetration test**. Run `python3 -B -I scanner/benchmark.py` to produce synthetic fixture metrics; do not advertise these as real-world precision/recall. See `benchmarks/INDEPENDENT_VALIDATION_PLAN.md` for a reproducible real-app benchmark protocol, which has not been run. See `docs/RELEASE_SIGNING.md` for a protected tagged-release attestation template, which has not been executed.
 
 ### Work not yet implemented in scanner
 
 - General multi-file taint analysis / tree-sitter AST analysis and branch-aware reachability
-- Automated SBOM, OSV, EPSS, CISA KEV enrichment or CVSS v4 scoring
+- OSV, EPSS, automatic affected-version matching and CVSS v4 scoring (basic exact-CVE KEV comparison is available via `scanner/threat_intel.py`)
 - Automated discovery of every Supabase grant/policy, RPC, realtime or next.js component data flow
 - Direct staging ZAP, WAF, DNS/hosting check, license audit or secret rotation
 - Automated cross-file MCP server/tool identity registry and tool description diff monitoring

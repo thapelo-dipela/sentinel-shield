@@ -1,0 +1,167 @@
+{
+  "benchmark": "synthetic-fixture-rule-signal-v1",
+  "scanner_version": "2.4.0",
+  "cases_total": 18,
+  "counts": {
+    "TP": 11,
+    "FP": 1,
+    "FN": 3,
+    "TN": 3
+  },
+  "precision": 0.9167,
+  "recall": 0.7857,
+  "limitations": "Synthetic fixtures chosen by skill maintainers; not validated exploitability, independent tests, or real-world generalization. Negative examples use high/critical signal threshold; not semantic vulnerability testing.",
+  "cases": [
+    {
+      "id": "PY-EVAL",
+      "expected_rule": "CODE001",
+      "observed_rules": [
+        "CODE001"
+      ],
+      "verdict": "TP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "PY-SHELL",
+      "expected_rule": "CODE002",
+      "observed_rules": [
+        "CODE002"
+      ],
+      "verdict": "TP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "PY-SQL-FSTRING",
+      "expected_rule": "INJ001",
+      "observed_rules": [
+        "INJ001"
+      ],
+      "verdict": "TP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "JS-XSS",
+      "expected_rule": "XSS001",
+      "observed_rules": [
+        "XSS001"
+      ],
+      "verdict": "TP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "SQL-RLS-DISABLED",
+      "expected_rule": "DB001",
+      "observed_rules": [
+        "DB001"
+      ],
+      "verdict": "TP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "SQL-RLS-TRUE",
+      "expected_rule": "DB003",
+      "observed_rules": [
+        "DB003"
+      ],
+      "verdict": "TP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "ENV-PUBLIC-SECRET",
+      "expected_rule": "DATA003",
+      "observed_rules": [
+        "DATA003",
+        "SECRET_FILE"
+      ],
+      "verdict": "TP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "AI-PERMISSIONS",
+      "expected_rule": "AI001",
+      "observed_rules": [],
+      "verdict": "FN",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "CI-PR-TARGET",
+      "expected_rule": "CI001",
+      "observed_rules": [
+        "CI001"
+      ],
+      "verdict": "TP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "LOCK-REMOTE",
+      "expected_rule": "LOCK_REMOTE",
+      "observed_rules": [
+        "LOCK_REMOTE"
+      ],
+      "verdict": "TP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "MCP-HTTP",
+      "expected_rule": "MCP_HTTP",
+      "observed_rules": [
+        "MCP_HTTP"
+      ],
+      "verdict": "TP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "AGENT-INSTRUCTION",
+      "expected_rule": "REPO_PROMPT",
+      "observed_rules": [
+        "REPO_PROMPT"
+      ],
+      "verdict": "TP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "SAFE-PY",
+      "expected_rule": null,
+      "observed_rules": [],
+      "verdict": "TN",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "SAFE-SQL",
+      "expected_rule": null,
+      "observed_rules": [],
+      "verdict": "TN",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "SAFE-MCP",
+      "expected_rule": null,
+      "observed_rules": [],
+      "verdict": "TN",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "SAFE-MENTION-EVAL",
+      "expected_rule": null,
+      "observed_rules": [
+        "CODE001"
+      ],
+      "verdict": "FP",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "MISS-BRACKET-EXEC",
+      "expected_rule": "CODE002",
+      "observed_rules": [],
+      "verdict": "FN",
+      "coverage": "bounded local static scan"
+    },
+    {
+      "id": "MISS-SQL-CONCAT",
+      "expected_rule": "INJ001",
+      "observed_rules": [],
+      "verdict": "FN",
+      "coverage": "bounded local static scan"
+    }
+  ]
+}
