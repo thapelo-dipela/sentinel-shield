@@ -512,7 +512,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "8a127e9fd424550f392384e6ee04d7b454b665fd8b3b5cfa039bbe78e454cde7"
+          "content": "59aa111a626ac1216da2cb1dc36783b0400c012c25b1ef1503cb3719b52c6422"
         }
       ],
       "name": "scanner/js_ast.cjs",
@@ -677,7 +677,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "b9db5672550cd0f300d941fa9ac7e55868d1b354b9528145110d1b271650c0dd"
+          "content": "5124191ea9a502dd40680f7b5cd1cf9001d4bbdaf4dbf3443bcac319a7b7c7be"
         }
       ],
       "name": "tests/test_alpha2_hardening.py",

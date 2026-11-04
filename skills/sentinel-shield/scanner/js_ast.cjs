@@ -29,14 +29,14 @@ const exts=new Set(['.js','.jsx','.ts','.tsx','.mjs','.cjs']);
 const findings=[],gaps=[];
 let used=0,count=0,work=0,helpers=0;
 const MAX_WORK=90000,MAX_HELPERS=350,MAX_DEPTH=8,MAX_AST_DEPTH=200,MAX_ITEMS=2200;
-class BudgetError extends Error {}
+class BudgetError extends Error { constructor(message){super(message);this.name='BudgetError';} }
 function tick(){if(++work>MAX_WORK)throw new BudgetError('node AST work budget');}
 function hash(s){return crypto.createHash('sha256').update(String(s)).digest('hex').slice(0,12);}
 function unique(items){const m=new Map();for(const f of items){m.set(f.source+'|'+f.steps.join('|'),f);if(m.size>=12)break;}return [...m.values()];}
 function preflight(sf){
   let n=0;const todo=[[sf,0]];
   while(todo.length){const [node,depth]=todo.pop();if(++n>80000||depth>MAX_AST_DEPTH)throw new BudgetError('JS AST nesting/node budget');
-    ts.forEachChild(node,ch=>todo.push([ch,depth+1]));
+    ts.forEachChild(node,ch=>{todo.push([ch,depth+1]);});
   }
 }
 function walk(dir){

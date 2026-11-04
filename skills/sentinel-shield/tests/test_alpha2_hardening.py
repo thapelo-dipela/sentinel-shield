@@ -122,6 +122,19 @@ cur.execute('SELECT '+r[0])
         self.assertIn('JS-SQL-TAINT',[x['rule'] for x in r['findings']]);self.assertFalse((Path(self.temp.name)/'injected-marker').exists())
         # An excluded node_modules directory remains disclosed as a gap.
         self.assertEqual(r['status'],'partial')
+    def test_js_preflight_checks_deep_second_sibling(self):
+        # Regression: a truthy callback return to ts.forEachChild stopped at
+        # the first child, missing deeply nested later statements.
+        cfg=trusted_compiler()
+        if not cfg:self.skipTest('trusted TypeScript compiler unavailable')
+        compiler,digest=cfg
+        parentheses=210
+        self.put('deep.ts', 'const shallow = 1;\nconst deep = '+ '('*parentheses+'x'+')'*parentheses+';\n')
+        result=scan(self.root,js=True,typescript_file=compiler,typescript_sha256=digest)
+        self.assertEqual(result['status'],'partial',result)
+        self.assertTrue(any('JS file analysis incomplete:' in gap and ':BudgetError' in gap
+                            for gap in result['gaps']),result['gaps'])
+
     def test_js_try_for_switch_and_cast(self):
         cfg=trusted_compiler()
         if not cfg:self.skipTest('no trusted test compiler configured')
