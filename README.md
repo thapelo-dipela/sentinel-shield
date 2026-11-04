@@ -32,6 +32,8 @@ Keep repository metadata outside the skill directory: its integrity verifier int
 
 ## Run tests
 
+The [v2.5.0 isolated-container verification report](docs/verification/v2.5.0-container.md) records **95 passing tests**, before/after integrity checks, the pinned container image, the full test log, and reproduction commands.
+
 Python 3.11 or newer is recommended. The local regression suite uses the standard library and mocked external scanner calls.
 
 ```bash

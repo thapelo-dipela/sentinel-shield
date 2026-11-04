@@ -6,6 +6,8 @@ This release imports the supplied v2.5.0 package unchanged. The repository and p
 
 ## Verification performed
 
+See the [isolated-container execution report and full test log](verification/v2.5.0-container.md) for a captured repeat run and reproduction instructions.
+
 - ZIP SHA256 matches the publisher-supplied value below.
 - Internal manifest SHA256 matches the independently supplied value below.
 - Complete inventory verification passed before and after testing: 42 inventoried files plus the manifest, 43 files total.
