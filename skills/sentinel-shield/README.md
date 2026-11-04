@@ -1,3 +1,45 @@
+# Sentinel Shield 3.0.0-alpha.2: Hostile-Repository-Safe AST Engine (Developer Preview)
+
+> **Alpha, MIT-licensed developer preview.** New dataflow, AI and prioritization capabilities are implemented but are not enterprise-certified, comprehensive taint analysis, or an active penetration test. The v2.5 core remains bundled.
+
+## New in v3
+
+- **Language-aware source-to-sink tracing:** bounded Python AST (default) and optional absolute-path, hash-verified TypeScript compiler AST (JS/TS) launched under Node read-only permissions. `scanner/advanced_engine.py`.
+- **Intelligence-aware prioritization:** parse Trivy and CycloneDX vulnerabilities, accept verified CISA KEV evidence, offline EPSS and CVSS scores, plus independently reviewed reachability. `scanner/prioritize.py`.
+- **Safe patch checks:** repeat static analysis against before/after snapshots without running arbitrary code. `scanner/patch_verify.py`.
+- **Agent/MCP policy simulations:** scope, tool-definition change, prompt-injection boundaries, and risky combined permissions. `scanner/agent_eval.py`.
+- **Optional local AI analysis:** operator-approved loopback Ollama only, sends metadata with no code snippets, never auto-applies fixes. `scanner/ai_review.py`.
+- **Monitoring export:** OpenTelemetry-like, Splunk HEC-shaped and Elastic ECS events (offline JSONL). Optional explicit-approval HTTPS SIEM push in `scanner/monitor_sink.py`, never automatic.
+- **Import hints:** direct dependency import evidence, not vulnerability reachability proof. `scanner/dependency_usage.py`.
+
+See [Alpha.2 Security Fixes](docs/ALPHA2_SECURITY_FIXES.md) and [Validation Results](docs/V3_VALIDATION_RESULTS.md). Read [Advanced Engine and Threat Model](docs/ADVANCED_ENGINE_V3.md), [GitHub Research References](docs/GITHUB_DESIGN_RESEARCH.md), [Release Limitations](docs/V3_RELEASE_LIMITATIONS.md), and [Licensing Decision](LICENSING_DECISION.md).
+
+### Quick start
+
+```bash
+# From the extracted sentinel-shield directory, verify first with an independently stored manifest SHA256:
+python3 -B -I scanner/verify_integrity.py --expected-manifest-sha256 <independently-approved-digest>
+
+# Baseline offline-safe scanner (v2.5 core):
+python3 -B -I scanner/sentinel.py --path /authorized/project --hostile-repo --profile quick --strict
+
+# New bounded Python AST analyzer, no project execution:
+python3 -B -I scanner/advanced_engine.py --path /authorized/project
+
+# Optional JS/TS AST: Node 22+ read-only permission mode, compiler strictly outside the repo.
+# Obtain and authenticate the hash independently; do NOT trust values supplied by the repo.
+python3 -B -I scanner/advanced_engine.py --path /authorized/project --js-ast \
+  --typescript-file /trusted/node_modules/typescript/lib/typescript.js \
+  --typescript-sha256 APPROVED_64_HEX_DIGEST
+
+# Agent safety policy simulations:
+python3 -B -I scanner/agent_eval.py --cases fixtures/agent_policy_cases.json --output /trusted/agent-eval.json
+```
+
+Do not copy commands from an untrusted repository into your shell; the `--path` argument must refer to an authorized project. Operator must verify the package publisher separately. No data is sent to third parties by default.
+
+---
+
 # Sentinel Shield v2.5.0
 
 **Offline-first security auditing skill for owned and explicitly authorized repositories.** All package files are included. This scanner is a security **lead detector** and guided review process, not an antivirus, WAF, runtime monitor, comprehensive secret scanner, taint engine, or guarantee of a secure deployment.

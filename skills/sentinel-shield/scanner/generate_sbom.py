@@ -16,13 +16,13 @@ def make_sbom():
     files=sorted(p for p in ROOT.rglob('*') if p.is_file() and p.name!='SHA256SUMS' and p!=OUTPUT and '__pycache__' not in p.parts)
     return {
        'bomFormat':'CycloneDX','specVersion':'1.6','version':1,
-       'metadata':{'component':{'type':'application','name':'sentinel-shield','version':'2.5.0','bom-ref':'pkg:generic/sentinel-shield@2.5.0'},
+       'metadata':{'component':{'type':'application','name':'sentinel-shield','version':'3.0.0-alpha.2','bom-ref':'pkg:generic/sentinel-shield@3.0.0-alpha.2'},
           'properties':[{'name':'sentinel:scope','value':'release source files only; external scanner binaries and environment not included'},
                         {'name':'sentinel:distribution-signature','value':'unsigned; publisher identity not attested'}]},
        'components':[{'type':'file','bom-ref':'file:'+p.relative_to(ROOT).as_posix(),
            'name':p.relative_to(ROOT).as_posix(),
            'hashes':[{'alg':'SHA-256','content':hashlib.sha256(p.read_bytes()).hexdigest()}]} for p in files],
-       'dependencies':[{'ref':'pkg:generic/sentinel-shield@2.5.0','dependsOn':[]}]
+       'dependencies':[{'ref':'pkg:generic/sentinel-shield@3.0.0-alpha.2','dependsOn':[]}]
     }
 
 def main():

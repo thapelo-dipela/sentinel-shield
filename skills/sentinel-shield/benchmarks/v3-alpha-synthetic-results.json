@@ -1,0 +1,138 @@
+{
+  "kind": "maintainer-authored synthetic sanity benchmark",
+  "cases": 15,
+  "tp": 9,
+  "fp": 0,
+  "fn": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "details": [
+    {
+      "case_id": "p-sql-direct",
+      "expected": [
+        "PY-SQL-TAINT"
+      ],
+      "predicted": [
+        "PY-SQL-TAINT"
+      ],
+      "gaps": []
+    },
+    {
+      "case_id": "p-sql-helper",
+      "expected": [
+        "PY-SQL-TAINT"
+      ],
+      "predicted": [
+        "PY-SQL-TAINT"
+      ],
+      "gaps": []
+    },
+    {
+      "case_id": "p-shell",
+      "expected": [
+        "PY-CMD-TAINT"
+      ],
+      "predicted": [
+        "PY-CMD-TAINT"
+      ],
+      "gaps": []
+    },
+    {
+      "case_id": "p-eval",
+      "expected": [
+        "PY-CODE-EVAL"
+      ],
+      "predicted": [
+        "PY-CODE-EVAL"
+      ],
+      "gaps": []
+    },
+    {
+      "case_id": "p-ssrf",
+      "expected": [
+        "PY-SSRF-TAINT"
+      ],
+      "predicted": [
+        "PY-SSRF-TAINT"
+      ],
+      "gaps": []
+    },
+    {
+      "case_id": "p-param-query",
+      "expected": [],
+      "predicted": [],
+      "gaps": []
+    },
+    {
+      "case_id": "p-static-sql",
+      "expected": [],
+      "predicted": [],
+      "gaps": []
+    },
+    {
+      "case_id": "p-safe-shell",
+      "expected": [],
+      "predicted": [],
+      "gaps": []
+    },
+    {
+      "case_id": "j-sql",
+      "expected": [
+        "JS-SQL-TAINT"
+      ],
+      "predicted": [
+        "JS-SQL-TAINT"
+      ],
+      "gaps": []
+    },
+    {
+      "case_id": "j-command",
+      "expected": [
+        "JS-CMD-TAINT"
+      ],
+      "predicted": [
+        "JS-CMD-TAINT"
+      ],
+      "gaps": []
+    },
+    {
+      "case_id": "j-xss",
+      "expected": [
+        "JS-XSS-TAINT"
+      ],
+      "predicted": [
+        "JS-XSS-TAINT"
+      ],
+      "gaps": []
+    },
+    {
+      "case_id": "j-ssrf",
+      "expected": [
+        "JS-SSRF-TAINT"
+      ],
+      "predicted": [
+        "JS-SSRF-TAINT"
+      ],
+      "gaps": []
+    },
+    {
+      "case_id": "j-safe-sql",
+      "expected": [],
+      "predicted": [],
+      "gaps": []
+    },
+    {
+      "case_id": "j-literal-html",
+      "expected": [],
+      "predicted": [],
+      "gaps": []
+    },
+    {
+      "case_id": "j-literal-command",
+      "expected": [],
+      "predicted": [],
+      "gaps": []
+    }
+  ],
+  "warning": "Synthetic expected labels are maintainer defined; these numbers DO NOT estimate production accuracy or robust source-to-sink completeness."
+}

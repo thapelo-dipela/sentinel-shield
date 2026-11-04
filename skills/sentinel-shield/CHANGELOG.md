@@ -1,3 +1,20 @@
+# 3.0.0-alpha.2 - security correctness release
+
+- Fix Python AST `None` handling, bounded recursion/work/call budgets, and per-file failures as partial coverage.
+- Extend Python source models for request JSON, headers, method chaining, iterators, dictionary/list operations, `await`, and common numeric casts.
+- Remove implicit Node module resolution and developer-specific TypeScript fallback. The JS parser requires a separately approved absolute compiler file with SHA256, outside the scanned repository.
+- Use Node 22+ read-only filesystem permission mode; no project Node module, install hook, or build may run.
+- Expand JS try/catch, loop, switch and cast modelling within documented limits.
+- Bind AST finding fingerprints to normalized local source evidence without exporting raw code.
+- Add bounded hostile-repo fixtures, standard library smoke coverage, direct JS parser compatibility tests and fail-closed regressions.
+- Fix docs to acknowledge the existing MIT-licensed GitHub repository.
+
+# 3.0.0-alpha.1 | 2026-11-04
+
+Developer-preview defensive engine. Adds Python and opt-in JS/TS AST-based source-to-sink tracing, external semantic Semgrep rule templates, offline EPSS/CVSS/verified KEV/reachability triage, non-executing patch regression checks, simulated MCP and agent policy evaluations, local metadata-only AI review and privacy-minimized SIEM event export. Existing v2.5 scanner and threat intelligence remain bundled. New functions have bounded analysis and do not justify enterprise certification. Consult `docs/V3_RELEASE_LIMITATIONS.md` and `LICENSING_DECISION.md`. No third-party source files copied from reviewed repositories.
+
+---
+
 # Sentinel Shield v2.5.0 (4 November 2026)
 
 - **Fail-closed KEV cache**: retained raw source bytes in the atomic snapshot; enforce rehash/reparse consistency on load, a minimum of 1,000 KEV records, sudden-drop detection (15%) and owner-controlled POSIX cache permissions. Reject symlinked cache paths and repo-local caches. A forged empty snapshot now returns incomplete rather than false clean. Legacy cache files require a new trusted refresh.

@@ -2,7 +2,9 @@
 
 Open-source, offline-first security auditing skill for owned and explicitly authorized repositories. Licensed under the [MIT License](LICENSE).
 
-**Current version: 2.5.0 — CISA integrity and supply-chain hardening.**
+**Stable release: v2.5.0. Candidate in this checkout: v3.0.0-alpha.2.**
+
+Alpha 2 adds bounded Python and JavaScript/TypeScript dataflow analysis. See the [integration verification and open review finding](docs/verification/v3.0.0-alpha.2.md) before using the candidate.
 
 Sentinel Shield combines a Python scanner, regression tests, review guidance, and integration templates. It detects security leads; it does not guarantee that an application is secure. Live external scanner compatibility and end-to-end feed downloads were not validated in this release review.
 
@@ -23,7 +25,7 @@ The integrity command checks file consistency, not publisher identity. For authe
 
 ## Repository layout
 
-- `skills/sentinel-shield/`: original v2.5.0 package, including its unchanged SHA256 inventory.
+- `skills/sentinel-shield/`: original v3.0.0-alpha.2 package, including its unchanged SHA256 inventory.
 - `LICENSE`: MIT terms covering this project, including the skill package.
 - `CONTRIBUTING.md`: development and version-update instructions.
 - `SECURITY.md`: vulnerability reporting guidance.
