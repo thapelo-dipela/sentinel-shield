@@ -1,0 +1,53 @@
+rules:
+  - id: sentinel-python-request-to-sql
+    languages: [python]
+    severity: ERROR
+    mode: taint
+    message: HTTP-controlled value may reach a SQL query expression. Confirm parameterization and authorization.
+    pattern-sources:
+      - pattern: request.args.get(...)
+      - pattern: request.form.get(...)
+      - pattern: request.json.get(...)
+    pattern-sinks:
+      - patterns:
+          - pattern: $CUR.execute($SQL, ...)
+          - focus-metavariable: $SQL
+  - id: sentinel-python-request-to-command
+    languages: [python]
+    severity: ERROR
+    mode: taint
+    message: HTTP-controlled value may reach a command execution boundary. Use fixed commands and separate arguments.
+    pattern-sources:
+      - pattern: request.args.get(...)
+      - pattern: request.form.get(...)
+    pattern-sinks:
+      - patterns:
+          - pattern: os.system($CMD)
+          - focus-metavariable: $CMD
+      - patterns:
+          - pattern: subprocess.run($CMD, shell=True, ...)
+          - focus-metavariable: $CMD
+  - id: sentinel-javascript-request-to-query
+    languages: [javascript, typescript]
+    severity: ERROR
+    mode: taint
+    message: Request-controlled data reaches a database query expression; verify prepared statements.
+    pattern-sources:
+      - pattern: $REQ.query.$FIELD
+      - pattern: $REQ.body.$FIELD
+    pattern-sinks:
+      - patterns:
+          - pattern: $DB.query($QUERY, ...)
+          - focus-metavariable: $QUERY
+  - id: sentinel-javascript-request-to-innerhtml
+    languages: [javascript, typescript]
+    severity: WARNING
+    mode: taint
+    message: Request-controlled data may be assigned to HTML, creating an injection risk.
+    pattern-sources:
+      - pattern: $REQ.query.$FIELD
+      - pattern: $REQ.body.$FIELD
+    pattern-sinks:
+      - patterns:
+          - pattern: $ELEMENT.innerHTML = $VALUE
+          - focus-metavariable: $VALUE

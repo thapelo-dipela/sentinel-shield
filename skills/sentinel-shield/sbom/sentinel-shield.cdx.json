@@ -17,10 +17,32 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "bf2dbad8110991afe120e919afa4906005ff414c04863c5890a9f1cafe9ee603"
+          "content": "4a2855df683444879988edb85822ba11e8ac14d2d5bf36649f2eb5eb0d199496"
         }
       ],
       "name": "CHANGELOG.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:LICENSE",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7696e3f43aeeeee43e578530106bbad43892b67638eb6c48550f8c89057d6a98"
+        }
+      ],
+      "name": "LICENSE",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:LICENSING_DECISION.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a3e5f9ca67aa3b3de3bc2c44e0b8f4f43c73137e659c2106d5e420acd1fbb7a6"
+        }
+      ],
+      "name": "LICENSING_DECISION.md",
       "type": "file"
     },
     {
@@ -28,7 +50,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "106bedf8a391c0e7096954e856c8c9b72e4181eab167e932e68ef5f4cca93449"
+          "content": "f559c5b9afe2cfcf96994349631e38749a23f047bba9813654b7686c9945eed0"
         }
       ],
       "name": "README.md",
@@ -39,7 +61,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "237c3d5bde524f12a92f9f53920b460706f08ad3ecd8694b62e515b4a966bb25"
+          "content": "b81f63b865b12d6542be20122bd2ff1aa86fa1f0a7e61565913b095ecb37c0de"
         }
       ],
       "name": "SKILL.md",
@@ -54,6 +76,17 @@
         }
       ],
       "name": "benchmarks/INDEPENDENT_VALIDATION_PLAN.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:benchmarks/advanced_synthetic_cases.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9bfde34555d7216859e5e4e3bc4d199049f637564e97467d88fbf956587a7939"
+        }
+      ],
+      "name": "benchmarks/advanced_synthetic_cases.json",
       "type": "file"
     },
     {
@@ -87,6 +120,50 @@
         }
       ],
       "name": "benchmarks/v2.5-synthetic-results.json",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:benchmarks/v3-alpha-synthetic-results.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a55f5579574df47170137809819a5beac4e86f5d4261751aa197b4c63dbf4033"
+        }
+      ],
+      "name": "benchmarks/v3-alpha-synthetic-results.json",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:benchmarks/v3-alpha2-synthetic-results.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d007da87fba1938c75e3eaf3727d59daa2294099c58e2aadb5d21a3cec6e21de"
+        }
+      ],
+      "name": "benchmarks/v3-alpha2-synthetic-results.json",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/ADVANCED_ENGINE_V3.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2945474b7538a958586bbf9e90c19d4352e3bc12cff3f63b24821f84d984a3ea"
+        }
+      ],
+      "name": "docs/ADVANCED_ENGINE_V3.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/ALPHA2_SECURITY_FIXES.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6ab5a6308f1fc9a176755d90ba5c5adb8b68a1ea62a571d9ffb48c3b37bb2d71"
+        }
+      ],
+      "name": "docs/ALPHA2_SECURITY_FIXES.md",
       "type": "file"
     },
     {
@@ -142,6 +219,17 @@
         }
       ],
       "name": "docs/EVALUATION_AND_RELEASE.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/GITHUB_DESIGN_RESEARCH.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "598e0d39e2229b9ee116da469e4384a114b3f5a110456724442b062c73ebd37c"
+        }
+      ],
+      "name": "docs/GITHUB_DESIGN_RESEARCH.md",
       "type": "file"
     },
     {
@@ -233,6 +321,39 @@
       "type": "file"
     },
     {
+      "bom-ref": "file:docs/V3_RELEASE_LIMITATIONS.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c706fa61f71f1abfc52310144dd6794c1c8cd2ff4877a8028738ec28d860a174"
+        }
+      ],
+      "name": "docs/V3_RELEASE_LIMITATIONS.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:docs/V3_VALIDATION_RESULTS.md",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7e2885aa209933b8663e8151411896cebc65fab5e413ae272fefdba2f89fb500"
+        }
+      ],
+      "name": "docs/V3_VALIDATION_RESULTS.md",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:fixtures/agent_policy_cases.json",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cff255915cbeb9faf7403d9763530054664c7e315905bb541ceae6db08949369"
+        }
+      ],
+      "name": "fixtures/agent_policy_cases.json",
+      "type": "file"
+    },
+    {
       "bom-ref": "file:fixtures/hostile_instructions_sample.txt",
       "hashes": [
         {
@@ -266,6 +387,17 @@
       "type": "file"
     },
     {
+      "bom-ref": "file:rules/semgrep-taint.yml",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9c0cfb87115369fbb4cc351995ce2543446cc4a6a5f5749a9e1ad5d3d96473c1"
+        }
+      ],
+      "name": "rules/semgrep-taint.yml",
+      "type": "file"
+    },
+    {
       "bom-ref": "file:rules/semgrep.yml",
       "hashes": [
         {
@@ -285,6 +417,50 @@
         }
       ],
       "name": "rules/trivy.yaml",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/advanced_benchmark.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "959acd6221e598d40b628be9c6d311a3c8ff8a6521db6268093db041423a8e33"
+        }
+      ],
+      "name": "scanner/advanced_benchmark.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/advanced_engine.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c28ec9d0cd2f446e8e900fafc1d1e386bd0b0fc8456a4b260c84bb4725b7b333"
+        }
+      ],
+      "name": "scanner/advanced_engine.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/agent_eval.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "da25959dff9324c83e379999fb1f38c35caacc045b23c97b5fdf1e99c73e8e0e"
+        }
+      ],
+      "name": "scanner/agent_eval.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/ai_review.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "4d3b9e382bcdcafbba9ea513c7605b5e6e1d43664bf1c2e18c1c89bdd924e858"
+        }
+      ],
+      "name": "scanner/ai_review.py",
       "type": "file"
     },
     {
@@ -310,14 +486,69 @@
       "type": "file"
     },
     {
+      "bom-ref": "file:scanner/dependency_usage.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1ca0f7402915f6417fbb42f2d40103bc00577ee8f1d83a6c2767cf3d13b4011a"
+        }
+      ],
+      "name": "scanner/dependency_usage.py",
+      "type": "file"
+    },
+    {
       "bom-ref": "file:scanner/generate_sbom.py",
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "cfa7dfd7b53d11ec9c4cb9d342026dde178ca72413f711607e55de068b556531"
+          "content": "f099ac3240852f5b19de905e4c226ca87ec9bd3e189cf774569d88ebfe79e024"
         }
       ],
       "name": "scanner/generate_sbom.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/js_ast.cjs",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8a127e9fd424550f392384e6ee04d7b454b665fd8b3b5cfa039bbe78e454cde7"
+        }
+      ],
+      "name": "scanner/js_ast.cjs",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/monitor_sink.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "77c056e9283232454ef2efc3033d2cf2efc83f20644ba66d680d0853e3826f77"
+        }
+      ],
+      "name": "scanner/monitor_sink.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/patch_verify.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "389bbd6aa4c572f9622bcbc2e9000abb8a8d946fd5a9d55afc6984e14c0ab8f1"
+        }
+      ],
+      "name": "scanner/patch_verify.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/prioritize.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "95585a42a9225bb23c9b8ec1b071e3786ffc742e36a5627ebe73e04050f0bd72"
+        }
+      ],
+      "name": "scanner/prioritize.py",
       "type": "file"
     },
     {
@@ -329,6 +560,17 @@
         }
       ],
       "name": "scanner/sentinel.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:scanner/telemetry.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7aec32b4a3f4114b881e28a7cc1f4575fe3d067efee3ee245e6edb0508135498"
+        }
+      ],
+      "name": "scanner/telemetry.py",
       "type": "file"
     },
     {
@@ -420,6 +662,28 @@
       "type": "file"
     },
     {
+      "bom-ref": "file:tests/test_advanced_engine.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "ddb8f36c3201a7360c24376332ae075fcaa92e180323ad03cdef8787e13ab402"
+        }
+      ],
+      "name": "tests/test_advanced_engine.py",
+      "type": "file"
+    },
+    {
+      "bom-ref": "file:tests/test_alpha2_hardening.py",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b9db5672550cd0f300d941fa9ac7e55868d1b354b9528145110d1b271650c0dd"
+        }
+      ],
+      "name": "tests/test_alpha2_hardening.py",
+      "type": "file"
+    },
+    {
       "bom-ref": "file:tests/test_release_templates.py",
       "hashes": [
         {
@@ -456,15 +720,15 @@
   "dependencies": [
     {
       "dependsOn": [],
-      "ref": "pkg:generic/sentinel-shield@2.5.0"
+      "ref": "pkg:generic/sentinel-shield@3.0.0-alpha.2"
     }
   ],
   "metadata": {
     "component": {
-      "bom-ref": "pkg:generic/sentinel-shield@2.5.0",
+      "bom-ref": "pkg:generic/sentinel-shield@3.0.0-alpha.2",
       "name": "sentinel-shield",
       "type": "application",
-      "version": "2.5.0"
+      "version": "3.0.0-alpha.2"
     },
     "properties": [
       {

@@ -1,0 +1,327 @@
+Python 3.13.18
+v22.16.0
+checksums and complete file inventory passed for 66 files
+test_agent_fixture (test_advanced_engine.AdvancedTests.test_agent_fixture) ... ok
+test_agent_mcp_scopes (test_advanced_engine.AdvancedTests.test_agent_mcp_scopes) ... ok
+test_agent_unknown_not_passed (test_advanced_engine.AdvancedTests.test_agent_unknown_not_passed) ... ok
+test_cvss_is_not_recalculated (test_advanced_engine.AdvancedTests.test_cvss_is_not_recalculated) ... ok
+test_ep_invalid_prob_dropped (test_advanced_engine.AdvancedTests.test_ep_invalid_prob_dropped) ... ok
+test_eval_detection (test_advanced_engine.AdvancedTests.test_eval_detection) ... ok
+test_hash_mismatch_fails (test_advanced_engine.AdvancedTests.test_hash_mismatch_fails) ... ok
+test_imports_are_hints_not_reachability (test_advanced_engine.AdvancedTests.test_imports_are_hints_not_reachability) ... ok
+test_js_ast_traces (test_advanced_engine.AdvancedTests.test_js_ast_traces) ... ok
+test_js_clean (test_advanced_engine.AdvancedTests.test_js_clean) ... ok
+test_js_untested_flag (test_advanced_engine.AdvancedTests.test_js_untested_flag) ... ok
+test_kev_prioritization (test_advanced_engine.AdvancedTests.test_kev_prioritization) ... ok
+test_local_ai_metadata_no_raw_code (test_advanced_engine.AdvancedTests.test_local_ai_metadata_no_raw_code) ... ok
+test_local_ai_reject_public_endpoint (test_advanced_engine.AdvancedTests.test_local_ai_reject_public_endpoint) ... ok
+test_no_flow_no_alarm (test_advanced_engine.AdvancedTests.test_no_flow_no_alarm) ... ok
+test_not_reachable_requires_evidence (test_advanced_engine.AdvancedTests.test_not_reachable_requires_evidence) ... ok
+test_patch_static_improvement (test_advanced_engine.AdvancedTests.test_patch_static_improvement) ... ok
+test_patch_static_regression (test_advanced_engine.AdvancedTests.test_patch_static_regression) ... ok
+test_python_helper_trace (test_advanced_engine.AdvancedTests.test_python_helper_trace) ... ok
+test_python_parameterized_no_sql_taint (test_advanced_engine.AdvancedTests.test_python_parameterized_no_sql_taint) ... ok
+test_python_request_sql_dataflow (test_advanced_engine.AdvancedTests.test_python_request_sql_dataflow) ... ok
+test_python_shell_taint (test_advanced_engine.AdvancedTests.test_python_shell_taint) ... ok
+test_python_ssrf (test_advanced_engine.AdvancedTests.test_python_ssrf) ... ok
+test_splunk_and_ecs (test_advanced_engine.AdvancedTests.test_splunk_and_ecs) ... ok
+test_symlink_not_followed (test_advanced_engine.AdvancedTests.test_symlink_not_followed) ... ok
+test_telemetry_suppresses_raw_path (test_advanced_engine.AdvancedTests.test_telemetry_suppresses_raw_path) ... ok
+test_trivy_cvss_read (test_advanced_engine.AdvancedTests.test_trivy_cvss_read) ... ok
+test_unicode_safe_display (test_advanced_engine.AdvancedTests.test_unicode_safe_display) ... ok
+test_unknown_kev_no_false_clean (test_advanced_engine.AdvancedTests.test_unknown_kev_no_false_clean) ... ok
+test_benchmark_corpus_labeled (test_advanced_engine.SecurityBoundaryTests.test_benchmark_corpus_labeled) ... ok
+test_monitor_sink_refuses_embedded_credentials (test_advanced_engine.SecurityBoundaryTests.test_monitor_sink_refuses_embedded_credentials) ... ok
+test_monitor_sink_refuses_extra_fields (test_advanced_engine.SecurityBoundaryTests.test_monitor_sink_refuses_extra_fields) ... ok
+test_monitor_sink_refuses_off_host (test_advanced_engine.SecurityBoundaryTests.test_monitor_sink_refuses_off_host) ... ok
+test_monitor_sink_requires_network_approval (test_advanced_engine.SecurityBoundaryTests.test_monitor_sink_requires_network_approval) ... ok
+test_analysis_budget_prevents_helper_explosion (test_alpha2_hardening.Alpha2RegressionTests.test_analysis_budget_prevents_helper_explosion) ... ok
+test_async_request_payload (test_alpha2_hardening.Alpha2RegressionTests.test_async_request_payload) ... ok
+test_bare_return_and_annotation_no_crash (test_alpha2_hardening.Alpha2RegressionTests.test_bare_return_and_annotation_no_crash) ... ok
+test_cli_partial_exit_three_and_not_one (test_alpha2_hardening.Alpha2RegressionTests.test_cli_partial_exit_three_and_not_one) ... ok
+test_explicit_verified_compiler_and_hostile_nodemodules (test_alpha2_hardening.Alpha2RegressionTests.test_explicit_verified_compiler_and_hostile_nodemodules) ... ok
+test_file_failure_does_not_hide_other_lead (test_alpha2_hardening.Alpha2RegressionTests.test_file_failure_does_not_hide_other_lead) ... ok
+test_hash_mismatch_rejected (test_alpha2_hardening.Alpha2RegressionTests.test_hash_mismatch_rejected) ... ok
+test_helper_depth_gaps_not_completed (test_alpha2_hardening.Alpha2RegressionTests.test_helper_depth_gaps_not_completed) ... ok
+test_js_requires_explicit_compiler (test_alpha2_hardening.Alpha2RegressionTests.test_js_requires_explicit_compiler) ... ok
+test_js_try_for_switch_and_cast (test_alpha2_hardening.Alpha2RegressionTests.test_js_try_for_switch_and_cast) ... ok
+test_large_expression_does_not_crash (test_alpha2_hardening.Alpha2RegressionTests.test_large_expression_does_not_crash) ... ok
+test_numeric_conversion_is_not_sql_taint (test_alpha2_hardening.Alpha2RegressionTests.test_numeric_conversion_is_not_sql_taint) ... ok
+test_python_source_idioms (test_alpha2_hardening.Alpha2RegressionTests.test_python_source_idioms) ... ok
+test_refuses_compiler_inside_repo (test_alpha2_hardening.Alpha2RegressionTests.test_refuses_compiler_inside_repo) ... ok
+test_refuses_compiler_symlink (test_alpha2_hardening.Alpha2RegressionTests.test_refuses_compiler_symlink) ... ok
+test_standard_library_smoke (test_alpha2_hardening.Alpha2RegressionTests.test_standard_library_smoke) ... ok
+test_line_move_keeps_fingerprint_and_code_change_invalidates (test_alpha2_hardening.EvidenceRegressionTests.test_line_move_keeps_fingerprint_and_code_change_invalidates) ... ok
+test_real_stdlib_bounded_scan_no_abort (test_alpha2_hardening.EvidenceRegressionTests.test_real_stdlib_bounded_scan_no_abort) ... ok
+test_same_abstract_flow_different_location_not_dropped (test_alpha2_hardening.EvidenceRegressionTests.test_same_abstract_flow_different_location_not_dropped) ... ok
+test_expression_arrow_callback_sink (test_alpha2_hardening.JSInlineCallbackTests.test_expression_arrow_callback_sink) ... ok
+test_release_template_must_attest_real_zip_and_sbom (test_release_templates.ReleaseTemplateTests.test_release_template_must_attest_real_zip_and_sbom) ... ok
+test_scheduled_workflow_scans_project_and_passes_real_cve_report (test_release_templates.ReleaseTemplateTests.test_scheduled_workflow_scans_project_and_passes_real_cve_report) ... ok
+test_trust_docs_do_not_claim_existing_signature (test_release_templates.ReleaseTemplateTests.test_trust_docs_do_not_claim_existing_signature) ... ok
+test_json_includes_explicit_untrusted_raw_path_warning (test_sentinel.EnterpriseReliabilityPatchTests.test_json_includes_explicit_untrusted_raw_path_warning) ... ok
+test_path_suppression_cannot_hide_second_issue (test_sentinel.EnterpriseReliabilityPatchTests.test_path_suppression_cannot_hide_second_issue) ... ok
+test_safe_display_path_blocks_instruction_like_names (test_sentinel.EnterpriseReliabilityPatchTests.test_safe_display_path_blocks_instruction_like_names) ... ok
+test_semgrep_excluded_directories_are_explicit_partial (test_sentinel.EnterpriseReliabilityPatchTests.test_semgrep_excluded_directories_are_explicit_partial) ... ok
+test_semgrep_integrated_status_is_partial_for_exclusions (test_sentinel.EnterpriseReliabilityPatchTests.test_semgrep_integrated_status_is_partial_for_exclusions) ... ok
+test_suppression_owner_ticket_fingerprint_required_and_max_expiry (test_sentinel.EnterpriseReliabilityPatchTests.test_suppression_owner_ticket_fingerprint_required_and_max_expiry) ... ok
+test_trivy_external_command_and_structured_parsing_mock (test_sentinel.EnterpriseReliabilityPatchTests.test_trivy_external_command_and_structured_parsing_mock) ... ok
+test_duplicate_exact_matches_do_not_broad_suppress (test_sentinel.FingerprintV24Tests.test_duplicate_exact_matches_do_not_broad_suppress) ... ok
+test_gitleaks_external_binds_source_lines (test_sentinel.FingerprintV24Tests.test_gitleaks_external_binds_source_lines) ... ok
+test_gitleaks_fingerprint_stable_after_line_moves (test_sentinel.FingerprintV24Tests.test_gitleaks_fingerprint_stable_after_line_moves) ... ok
+test_gitleaks_same_line_columns_distinct (test_sentinel.FingerprintV24Tests.test_gitleaks_same_line_columns_distinct) ... ok
+test_gitleaks_source_evidence_distinguishes_distinct_redacted_secrets (test_sentinel.FingerprintV24Tests.test_gitleaks_source_evidence_distinguishes_distinct_redacted_secrets) ... ok
+test_gitleaks_source_missing_marks_incomplete (test_sentinel.FingerprintV24Tests.test_gitleaks_source_missing_marks_incomplete) ... ok
+test_same_line_worse_code_invalidates_suppression (test_sentinel.FingerprintV24Tests.test_same_line_worse_code_invalidates_suppression) ... ok
+test_secret_evidence_not_serialized (test_sentinel.FingerprintV24Tests.test_secret_evidence_not_serialized) ... ok
+test_semgrep_rule_ids_do_not_collapse_due_to_install_prefix (test_sentinel.FingerprintV24Tests.test_semgrep_rule_ids_do_not_collapse_due_to_install_prefix) ... ok
+test_semgrep_stable_id_on_two_install_paths (test_sentinel.FingerprintV24Tests.test_semgrep_stable_id_on_two_install_paths) ... ok
+test_sql_moved_statement_content_bound (test_sentinel.FingerprintV24Tests.test_sql_moved_statement_content_bound) ... ok
+test_unchanged_code_moved_line_keeps_fingerprint (test_sentinel.FingerprintV24Tests.test_unchanged_code_moved_line_keeps_fingerprint) ... ok
+test_whitespace_normalization (test_sentinel.FingerprintV24Tests.test_whitespace_normalization) ... ok
+test_agent_hook_any_command_review (test_sentinel.SentinelTests.test_agent_hook_any_command_review) ... ok
+test_baseline_distinguishes_existing (test_sentinel.SentinelTests.test_baseline_distinguishes_existing) ... ok
+test_baseline_inside_root_is_refused (test_sentinel.SentinelTests.test_baseline_inside_root_is_refused) ... ok
+test_clean_lockfile_is_accepted_gap (test_sentinel.SentinelTests.test_clean_lockfile_is_accepted_gap) ... ok
+test_core_signals (test_sentinel.SentinelTests.test_core_signals) ... ok
+test_critical_suppression_not_honored (test_sentinel.SentinelTests.test_critical_suppression_not_honored) ... ok
+test_env_local_and_generic_cloud_key (test_sentinel.SentinelTests.test_env_local_and_generic_cloud_key) ... ok
+test_expired_suppression_not_applied (test_sentinel.SentinelTests.test_expired_suppression_not_applied) ... ok
+test_filename_path_id_collision_resistant (test_sentinel.SentinelTests.test_filename_path_id_collision_resistant) ... ok
+test_full_mode_manifest_inside_root_refused (test_sentinel.SentinelTests.test_full_mode_manifest_inside_root_refused) ... ok
+test_gitleaks_canned_json_and_empty_fail (test_sentinel.SentinelTests.test_gitleaks_canned_json_and_empty_fail) ... ok
+test_gitleaks_external_requires_stdout_and_flags (test_sentinel.SentinelTests.test_gitleaks_external_requires_stdout_and_flags) ... ok
+test_hostile_cannot_launch_external (test_sentinel.SentinelTests.test_hostile_cannot_launch_external) ... ok
+test_hostile_instructions_hidden_unicode (test_sentinel.SentinelTests.test_hostile_instructions_hidden_unicode) ... ok
+test_huge_file_and_file_count_guard (test_sentinel.SentinelTests.test_huge_file_and_file_count_guard) ... ok
+test_instruction_patterns_code_mdc_settings (test_sentinel.SentinelTests.test_instruction_patterns_code_mdc_settings) ... ok
+test_integrity_verify_reject_unlisted_files_and_tamper (test_sentinel.SentinelTests.test_integrity_verify_reject_unlisted_files_and_tamper) ... ok
+test_large_lockfile_is_bounded_and_tainted_tail_detected (test_sentinel.SentinelTests.test_large_lockfile_is_bounded_and_tainted_tail_detected) ... ok
+test_limits_report_incomplete (test_sentinel.SentinelTests.test_limits_report_incomplete) ... ok
+test_lockfile_git_dependency_and_unapproved_host (test_sentinel.SentinelTests.test_lockfile_git_dependency_and_unapproved_host) ... ok
+test_mcp_hides_secret (test_sentinel.SentinelTests.test_mcp_hides_secret) ... ok
+test_minified_file_window_not_blind (test_sentinel.SentinelTests.test_minified_file_window_not_blind) ... ok
+test_multiline_agent_hook_settings (test_sentinel.SentinelTests.test_multiline_agent_hook_settings) ... ok
+test_name_is_escaped_in_every_report (test_sentinel.SentinelTests.test_name_is_escaped_in_every_report) ... ok
+test_no_project_execution (test_sentinel.SentinelTests.test_no_project_execution) ... ok
+test_path_suppression_uses_real_path_or_path_id (test_sentinel.SentinelTests.test_path_suppression_uses_real_path_or_path_id) ... ok
+test_private_reports_and_exit_gate (test_sentinel.SentinelTests.test_private_reports_and_exit_gate) ... ok
+test_repo_scanner_suppression_signals (test_sentinel.SentinelTests.test_repo_scanner_suppression_signals) ... ok
+test_sarif_has_unique_rules_even_with_repeat_findings (test_sentinel.SentinelTests.test_sarif_has_unique_rules_even_with_repeat_findings) ... ok
+test_sarif_real_paths_and_unicode_uris (test_sentinel.SentinelTests.test_sarif_real_paths_and_unicode_uris) ... ok
+test_semgrep_external_flags_and_remapped_file (test_sentinel.SentinelTests.test_semgrep_external_flags_and_remapped_file) ... ok
+test_semgrep_nonzero_preserves_partial_results (test_sentinel.SentinelTests.test_semgrep_nonzero_preserves_partial_results) ... ok
+test_semgrep_partial_preserves_findings (test_sentinel.SentinelTests.test_semgrep_partial_preserves_findings) ... ok
+test_semgrep_rejects_mismatched_result_paths (test_sentinel.SentinelTests.test_semgrep_rejects_mismatched_result_paths) ... ok
+test_semgrep_shadow_copy_neutralizes_repo_ignore (test_sentinel.SentinelTests.test_semgrep_shadow_copy_neutralizes_repo_ignore) ... ok
+test_sql_definer_uses_same_statement_only (test_sentinel.SentinelTests.test_sql_definer_uses_same_statement_only) ... ok
+test_sql_lexer_ignores_commented_out_creation_and_dollar_sql (test_sentinel.SentinelTests.test_sql_lexer_ignores_commented_out_creation_and_dollar_sql) ... ok
+test_sql_multiline_and_missing_rls (test_sentinel.SentinelTests.test_sql_multiline_and_missing_rls) ... ok
+test_sql_table_enabled_in_separate_migration (test_sentinel.SentinelTests.test_sql_table_enabled_in_separate_migration) ... ok
+test_supabase_and_actions_signals (test_sentinel.SentinelTests.test_supabase_and_actions_signals) ... ok
+test_supabase_valid_syntax_not_flagged (test_sentinel.SentinelTests.test_supabase_valid_syntax_not_flagged) ... ok
+test_suppression_expired_does_not_abort (test_sentinel.SentinelTests.test_suppression_expired_does_not_abort) ... ok
+test_suppressions_inside_root_refused (test_sentinel.SentinelTests.test_suppressions_inside_root_refused) ... ok
+test_symlink_outside_root (test_sentinel.SentinelTests.test_symlink_outside_root) ... ok
+test_tool_manifest_pin_bad (test_sentinel.SentinelTests.test_tool_manifest_pin_bad) ... ok
+test_trivy_parser_retains_all_three_kinds (test_sentinel.SentinelTests.test_trivy_parser_retains_all_three_kinds) ... ok
+test_advisories_discard_untrusted_link_and_html (test_threat_intel.ThreatIntelTests.test_advisories_discard_untrusted_link_and_html) ... ok
+test_allowlist_blocks_arbitrary_urls (test_threat_intel.ThreatIntelTests.test_allowlist_blocks_arbitrary_urls) ... ok
+test_asset_name_hint_never_claims_exploitability (test_threat_intel.ThreatIntelTests.test_asset_name_hint_never_claims_exploitability) ... ok
+test_cache_rejects_forged_empty_snapshot_with_fresh_time (test_threat_intel.ThreatIntelTests.test_cache_rejects_forged_empty_snapshot_with_fresh_time) ... ok
+test_cache_rejects_valid_hash_but_too_few_kev_rows (test_threat_intel.ThreatIntelTests.test_cache_rejects_valid_hash_but_too_few_kev_rows) ... ok
+test_exact_match_gates_even_if_another_feed_is_stale (test_threat_intel.ThreatIntelTests.test_exact_match_gates_even_if_another_feed_is_stale) ... ok
+test_forged_cache_symlink_refused (test_threat_intel.ThreatIntelTests.test_forged_cache_symlink_refused) ... ok
+test_instruction_like_title_is_opaque (test_threat_intel.ThreatIntelTests.test_instruction_like_title_is_opaque) ... ok
+test_missing_cache_is_incomplete (test_threat_intel.ThreatIntelTests.test_missing_cache_is_incomplete) ... ok
+test_network_permission_gate (test_threat_intel.ThreatIntelTests.test_network_permission_gate) ... Sentinel threat intelligence error: ValueError: Network refresh requires explicit --allow-network
+ok
+test_no_false_matches_from_names (test_threat_intel.ThreatIntelTests.test_no_false_matches_from_names) ... ok
+test_older_cache_schema_requires_new_refresh (test_threat_intel.ThreatIntelTests.test_older_cache_schema_requires_new_refresh) ... ok
+test_parser_cisa_kev (test_threat_intel.ThreatIntelTests.test_parser_cisa_kev) ... ok
+test_parser_rejects_bad_feed (test_threat_intel.ThreatIntelTests.test_parser_rejects_bad_feed) ... ok
+test_partial_refresh_fails_closed_and_preserves_prior (test_threat_intel.ThreatIntelTests.test_partial_refresh_fails_closed_and_preserves_prior) ... ok
+test_permissions_must_be_owner_only (test_threat_intel.ThreatIntelTests.test_permissions_must_be_owner_only) ... ok
+test_pinned_mirror_resolves_sha_and_does_not_trust_develop (test_threat_intel.ThreatIntelTests.test_pinned_mirror_resolves_sha_and_does_not_trust_develop) ... ok
+test_raw_feed_hash_checked_at_read (test_threat_intel.ThreatIntelTests.test_raw_feed_hash_checked_at_read) ... ok
+test_refresh_offline_mock_and_delta (test_threat_intel.ThreatIntelTests.test_refresh_offline_mock_and_delta) ... ok
+test_refresh_rejects_large_kev_drop (test_threat_intel.ThreatIntelTests.test_refresh_rejects_large_kev_drop) ... ok
+test_rejects_repo_local_cache (test_threat_intel.ThreatIntelTests.test_rejects_repo_local_cache) ... ok
+test_rejects_symlinked_cache_directory_and_parent (test_threat_intel.ThreatIntelTests.test_rejects_symlinked_cache_directory_and_parent) ... ok
+test_report_does_not_render_raw_instructions (test_threat_intel.ThreatIntelTests.test_report_does_not_render_raw_instructions) ... ok
+test_review_matches_exact_cve_only_and_lab_filter (test_threat_intel.ThreatIntelTests.test_review_matches_exact_cve_only_and_lab_filter) ... ok
+test_utf16_rss_or_prolog_refused (test_threat_intel.ThreatIntelTests.test_utf16_rss_or_prolog_refused) ... ok
+test_vwad_only_curates_metadata (test_threat_intel.ThreatIntelTests.test_vwad_only_curates_metadata) ... ok
+
+----------------------------------------------------------------------
+Ran 149 tests in 13.256s
+
+OK
+{"report": "/tmp/sentinel-advanced-m_3t__9v/flows.json", "status": "partial", "findings": 0, "gaps": 1}
+Sentinel Shield 2.5.0 findings 1 new high/critical 1 coverage completed within configured file scope
+Private report directory: /tmp/tmp6e8d969i/reports/sentinel-v2.5-s5wa9zfo
+Sentinel Shield 2.5.0 findings 1 new high/critical 1 coverage completed within configured file scope
+Private report directory: /tmp/sentinel-v2.5-5fteo8_s
+Sentinel Shield 2.5.0 findings 1 new high/critical 0 coverage completed within configured file scope
+Private report directory: /tmp/tmp3dscsagy/out/sentinel-v2.5-_wa3f52u
+Sentinel intelligence report: /tmp/sentinel-intel-4h96ajpb
+Feed coverage: incomplete KEV exact matches: 0
+Sentinel intelligence report: /tmp/sentinel-intel-kli_4gzq
+Feed coverage: incomplete KEV exact matches: 1
+Sentinel intelligence report: /tmp/sentinel-intel-jrx3hzcx
+Feed coverage: incomplete KEV exact matches: 0
+synthetic cases: 15 TP: 9 FP: 0 FN: 0
+{
+  "kind": "maintainer-authored synthetic sanity benchmark",
+  "cases": 15,
+  "complete_cases": 15,
+  "incomplete_cases": 0,
+  "tp": 9,
+  "fp": 0,
+  "fn": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "details": [
+    {
+      "case_id": "p-sql-direct",
+      "expected": [
+        "PY-SQL-TAINT"
+      ],
+      "predicted": [
+        "PY-SQL-TAINT"
+      ],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "p-sql-helper",
+      "expected": [
+        "PY-SQL-TAINT"
+      ],
+      "predicted": [
+        "PY-SQL-TAINT"
+      ],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "p-shell",
+      "expected": [
+        "PY-CMD-TAINT"
+      ],
+      "predicted": [
+        "PY-CMD-TAINT"
+      ],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "p-eval",
+      "expected": [
+        "PY-CODE-EVAL"
+      ],
+      "predicted": [
+        "PY-CODE-EVAL"
+      ],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "p-ssrf",
+      "expected": [
+        "PY-SSRF-TAINT"
+      ],
+      "predicted": [
+        "PY-SSRF-TAINT"
+      ],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "p-param-query",
+      "expected": [],
+      "predicted": [],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "p-static-sql",
+      "expected": [],
+      "predicted": [],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "p-safe-shell",
+      "expected": [],
+      "predicted": [],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "j-sql",
+      "expected": [
+        "JS-SQL-TAINT"
+      ],
+      "predicted": [
+        "JS-SQL-TAINT"
+      ],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "j-command",
+      "expected": [
+        "JS-CMD-TAINT"
+      ],
+      "predicted": [
+        "JS-CMD-TAINT"
+      ],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "j-xss",
+      "expected": [
+        "JS-XSS-TAINT"
+      ],
+      "predicted": [
+        "JS-XSS-TAINT"
+      ],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "j-ssrf",
+      "expected": [
+        "JS-SSRF-TAINT"
+      ],
+      "predicted": [
+        "JS-SSRF-TAINT"
+      ],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "j-safe-sql",
+      "expected": [],
+      "predicted": [],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "j-literal-html",
+      "expected": [],
+      "predicted": [],
+      "gaps": [],
+      "status": "completed"
+    },
+    {
+      "case_id": "j-literal-command",
+      "expected": [],
+      "predicted": [],
+      "gaps": [],
+      "status": "completed"
+    }
+  ],
+  "warning": "Synthetic expected labels are maintainer defined; these numbers DO NOT estimate production accuracy or robust source-to-sink completeness."
+}checksums and complete file inventory passed for 66 files

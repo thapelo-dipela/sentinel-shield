@@ -1,0 +1,17 @@
+[
+  {"id":"p-sql-direct","language":"python","source":"from flask import request\nx=request.args.get('id')\ncursor.execute('select '+x)","expected":["PY-SQL-TAINT"]},
+  {"id":"p-sql-helper","language":"python","source":"from flask import request\ndef q(x):\n c.execute('select '+x)\nq(request.form.get('id'))","expected":["PY-SQL-TAINT"]},
+  {"id":"p-shell","language":"python","source":"from flask import request\nimport os\nos.system(request.args.get('cmd'))","expected":["PY-CMD-TAINT"]},
+  {"id":"p-eval","language":"python","source":"from flask import request\ncode=request.args.get('code')\neval(code)","expected":["PY-CODE-EVAL"]},
+  {"id":"p-ssrf","language":"python","source":"from flask import request\nimport requests\nrequests.get(request.args.get('url'))","expected":["PY-SSRF-TAINT"]},
+  {"id":"p-param-query","language":"python","source":"from flask import request\nx=request.args.get('id')\ncursor.execute('select * from t where id=?',(x,))","expected":[]},
+  {"id":"p-static-sql","language":"python","source":"cursor.execute('select 1')","expected":[]},
+  {"id":"p-safe-shell","language":"python","source":"import subprocess\nsubprocess.run(['echo','ok'],shell=False)","expected":[]},
+  {"id":"j-sql","language":"javascript","source":"app.get('/x',(req,res)=>{const x=req.query.id;db.query('select '+x);});","expected":["JS-SQL-TAINT"]},
+  {"id":"j-command","language":"javascript","source":"app.get('/x',(req,res)=>{const x=req.query.q;exec(x);});","expected":["JS-CMD-TAINT"]},
+  {"id":"j-xss","language":"javascript","source":"app.get('/x',(req,res)=>{const x=req.query.q;el.innerHTML=x;});","expected":["JS-XSS-TAINT"]},
+  {"id":"j-ssrf","language":"javascript","source":"app.get('/x',(req,res)=>{fetch(req.query.url);});","expected":["JS-SSRF-TAINT"]},
+  {"id":"j-safe-sql","language":"javascript","source":"app.get('/x',(req,res)=>{const x=req.query.id;db.query('select * from t where id=?',[x]);});","expected":[]},
+  {"id":"j-literal-html","language":"javascript","source":"el.innerHTML='static value';","expected":[]},
+  {"id":"j-literal-command","language":"javascript","source":"exec('echo hello');","expected":[]}
+]
